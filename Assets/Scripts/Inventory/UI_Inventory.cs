@@ -1,17 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UI_Inventory : MonoBehaviour
 {
+    [SerializeField] private Transform pfUI_Item;
+
     private Inventory inventory;
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
+    private Player character;
 
     private void Awake()
     {
         itemSlotContainer = transform.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
+    }
+
+    public void SetPlayer(Player character)
+    {
+        this.character = character;
     }
 
     public void SetInventory(Inventory inventory)
