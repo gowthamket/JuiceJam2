@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class ItemPickup : Interactable
 {
-    public float radius = 3f;
+    public Item item;
 
-    private void OnDrawGizmosSelected()
+    public override void Interact()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        base.Interact();
+
+        Pickup();
+    }
+
+    void Pickup()
+    {
+        bool wasPickedUp = Inventory.Instance.Add(item);
+
+        if (wasPickedUp)
+        {
+            Destroy(gameObject);
+        }
     }
 }
