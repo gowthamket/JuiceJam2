@@ -11,7 +11,7 @@ public class ItemSlot : MonoBehaviour
 
     public Item Item => item;
 
-    public void AddItem(Item newItem)
+    public virtual void AddItem(Item newItem)
     {
         item = newItem;
         icon.sprite = newItem.icon;
