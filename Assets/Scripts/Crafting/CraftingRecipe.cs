@@ -8,6 +8,13 @@ public class CraftingRecipe : Item
 {
     public Item result;
     public Ingredient[] ingredients;
+    public float craftTime = 1f;
+    private CraftingSlot parentCraftingSlot;
+
+    public void SetParentSlot(CraftingSlot slot)
+    {
+        parentCraftingSlot = slot;
+    }
 
     public bool CanCraft()
     {
@@ -31,17 +38,23 @@ public class CraftingRecipe : Item
         }
     }
 
+    public bool CraftItem()
+    {
+        if (!CanCraft())
+        {
+            return false;
+        }
+
+        RemoveIngredientsFromInventory();
+
+        parentCraftingSlot.StartCrafting();
+
+        return true;
+    }
+
     public override void Use()
     {
-        if (CanCraft())
-        {
-            RemoveIngredientsFromInventory();
-            Inventory.instance.AddItem(result);
-        }
-        else
-        {
-
-        }
+        Inventory.instance.AddCraftingItem(this);
     }
 
 

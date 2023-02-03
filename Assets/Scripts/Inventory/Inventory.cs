@@ -21,6 +21,9 @@ public class Inventory : MonoBehaviour
 
     public List<Item> inventoryItemList = new List<Item>();
 
+    private Queue<CraftingRecipe> craftingQueue = new Queue<CraftingRecipe> ();
+    private bool isCrafting;
+
     public void AddItem(Item item)
     {
         inventoryItemList.Add(item);
@@ -71,6 +74,44 @@ public class Inventory : MonoBehaviour
             {
                 inventoryItemList.Remove(i);
             }
+        }
+    }
+
+    public void AddCraftingItem(CraftingRecipe newRecipe)
+    {
+        craftingQueue.Enqueue(newRecipe);
+
+        if (!isCrafting)
+        {
+            isCrafting = true;
+            StartCoroutine(CraftItem());
+        }
+    }
+
+    private IEnumerator CraftItem()
+    {
+        if (craftingQueue.Count == 0)
+        {
+            isCrafting = false;
+            yield break;
+        }
+
+        CraftingRecipe currentRecipe = craftingQueue.Dequeue();
+
+        if (currentRecipe.CraftItem())
+        {
+            craftingQueue.Clear();
+            isCrafting = false;
+            yield break;
+        }
+
+        yield return new WaitForSeconds(currentRecipe.craftTime * 1.1f);
+
+        AddItem(currentRecipe.result);
+
+        if (craftingQueue.Count > 1)
+        {
+            yield return StartCoroutine(CraftItem());
         }
     }
     

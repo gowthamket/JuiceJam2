@@ -45,8 +45,11 @@ public class InventoryUI : MonoBehaviour
         foreach(Item recipe in craftingRecipes)
         {
             GameObject GO = Instantiate(itemSlotPrefab, craftingItemTransform);
-            ItemSlot slot = GO.GetComponent<ItemSlot>();
+            CraftingSlot slot = GO.GetComponent<CraftingSlot>();
             slot.AddItem(recipe);
+
+            CraftingRecipe craftRecipe = (CraftingRecipe)recipe;
+            craftRecipe.SetParentSlot(slot);
         }
     }
 
