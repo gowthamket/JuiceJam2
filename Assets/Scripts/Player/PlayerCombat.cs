@@ -27,7 +27,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Punch();
+                
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
@@ -41,7 +41,43 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
+            enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
+        }
+    }
 
+    void Blender()
+    {
+        animator.SetTrigger("PlayerBlenderAttack");
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
+        }
+    }
+
+    void Spoon()
+    {
+        animator.SetTrigger("PlayerSpoonAttack");
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
+        }
+    }
+
+    void Whisk()
+    {
+        animator.SetTrigger("PlayerWhiskAttack");
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
         }
     }
 }
