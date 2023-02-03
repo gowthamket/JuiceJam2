@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
     public Transform target;
     public Transform enemyGFX;
 
+    public Transform deathDrop;
+
     public int maxHealth = 100;
     int currentHealth;
 
@@ -54,6 +56,7 @@ public class EnemyAI : MonoBehaviour
     {
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        Instantiate(deathDrop);
     }
 
     void OnPathComplete(Path p)

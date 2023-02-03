@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 958775005478799850, guid: 75e2b383612775e468c469b509b38c5a, type: 3}
   enemyGFX: {fileID: 2428131855009477045}
+  deathDrop: {fileID: 1932004278417300172, guid: 89b151001b582b246ba6a9fb3d4e0699, type: 3}
   maxHealth: 100
   speed: 200
   nextWaypointDistance: 3
