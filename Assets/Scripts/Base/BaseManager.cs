@@ -8,6 +8,6 @@ public class BaseManager : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(baseObject);
+        Instantiate(baseObject, new Vector2(baseObject.transform.position.x, baseObject.transform.position.y), Quaternion.identity);
     }
 }
