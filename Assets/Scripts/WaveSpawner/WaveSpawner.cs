@@ -10,7 +10,7 @@ public class WaveSpawner : MonoBehaviour
     private int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
 
-    public Transform[] spawnLocation;
+    public GameObject[] spawnLocation;
     public int spawnIndex;
 
     public int waveDuration;
@@ -33,7 +33,7 @@ public class WaveSpawner : MonoBehaviour
             //spawn an enemy
             if (enemiesToSpawn.Count > 0)
             {
-                GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnIndex].position, Quaternion.identity); // spawn first enemy in our list
+                GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], new Vector2(spawnLocation[spawnIndex].transform.position.x, spawnLocation[spawnIndex].transform.position.y), Quaternion.identity); // spawn first enemy in our list
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
                 spawnTimer = spawnInterval;
