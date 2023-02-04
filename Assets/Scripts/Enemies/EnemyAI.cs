@@ -31,7 +31,7 @@ public class EnemyAI : MonoBehaviour
         currentHealth = maxHealth;
 
         InvokeRepeating("UpdatePath", 0f, .5f);
-        seeker.StartPath(rb.position, target.position, OnPathComplete);
+        //seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
     void UpdatePath()
