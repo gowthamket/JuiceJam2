@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: -380159584102528536}
   - component: {fileID: -6363153731631882852}
   - component: {fileID: -2071034484030674445}
-  - component: {fileID: -5855315523222425850}
-  - component: {fileID: -870788894764636386}
+  - component: {fileID: -5799472849296827475}
+  - component: {fileID: 4196430263623915022}
   m_Layer: 0
   m_Name: OrangeEnemy
   m_TagString: Enemy
@@ -115,7 +115,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -123,7 +123,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-5855315523222425850
+--- !u!114 &-5799472849296827475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   drawGizmos: 1
-  detailedGizmos: 0
+  detailedGizmos: 1
   startEndModifier:
     addPoints: 0
     exactStartPoint: 3
@@ -151,7 +151,7 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &-870788894764636386
+--- !u!114 &4196430263623915022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 958775005478799850, guid: 75e2b383612775e468c469b509b38c5a, type: 3}
-  enemyGFX: {fileID: 8868822391269130461}
-  deathDrop: {fileID: 8228777431602586166, guid: 898fe1c4bcba47740873e9380fda504a, type: 3}
+  enemyGFX: {fileID: 0}
+  deathDrop: {fileID: 0}
   maxHealth: 100
   speed: 200
   nextWaypointDistance: 3

@@ -55,7 +55,7 @@ public class UI_Shop : MonoBehaviour
 
     public void Hide()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     

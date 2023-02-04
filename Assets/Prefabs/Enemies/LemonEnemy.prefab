@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3542541364129716207}
   - component: {fileID: 7028450507774996853}
   - component: {fileID: 2067103646534527325}
-  - component: {fileID: 3419292301605373190}
-  - component: {fileID: 8876275170999871509}
+  - component: {fileID: -8350464565823796253}
+  - component: {fileID: -3054472266084653807}
   m_Layer: 0
   m_Name: LemonEnemy
   m_TagString: Enemy
@@ -99,7 +99,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -123,7 +123,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.255
---- !u!114 &3419292301605373190
+--- !u!114 &-8350464565823796253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   drawGizmos: 1
-  detailedGizmos: 0
+  detailedGizmos: 1
   startEndModifier:
     addPoints: 0
     exactStartPoint: 3
@@ -151,7 +151,7 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &8876275170999871509
+--- !u!114 &-3054472266084653807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 958775005478799850, guid: 75e2b383612775e468c469b509b38c5a, type: 3}
-  enemyGFX: {fileID: 6970298182968513122}
-  deathDrop: {fileID: 8515974577290929448, guid: 62fac96f80acd9843bdcfefc1c8c2627, type: 3}
+  enemyGFX: {fileID: 0}
+  deathDrop: {fileID: 0}
   maxHealth: 100
   speed: 200
   nextWaypointDistance: 3

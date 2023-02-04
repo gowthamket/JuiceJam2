@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour
     public float nextWaypointDistance = 3f;
 
     Path path;
+    //AstarPath.
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
 
@@ -27,11 +28,12 @@ public class EnemyAI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        //seeker.
 
         currentHealth = maxHealth;
 
         InvokeRepeating("UpdatePath", 0f, .5f);
-        seeker.StartPath(rb.position, target.position, OnPathComplete);
+        //seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
     void UpdatePath()
